@@ -3,6 +3,7 @@ provider "aws" {
 }
 
 resource "aws_lambda_function" "lambda_builder" {
+    
 
     function_name       = var.lambda_name
     role                =  aws_iam_rolew.lambda_role.arn
