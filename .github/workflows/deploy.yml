@@ -9,17 +9,19 @@ jobs:
   terraform:
     name: Apply Terraform
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2
+            role-to-assume: arn:aws:iam::211507862291:role/GitHubAction-AssumeRoleWithAction
+            aws-region: us-east-2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
