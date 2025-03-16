@@ -30,7 +30,7 @@ jobs:
         run: |
           cd lambda
           zip -r lambda.zip .
-          mv lambda.zip ../terraform/lambda.zip
+          mv lambda.zip ../../terraform/lambda.zip
 
       - name: Terraform Init
         run: terraform init
