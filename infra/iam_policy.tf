@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "lambda_policy" {
-  name        = "lambda_logg_policyx"
+  name        = "lambda_logg_policyxx"
   description = "Permissão para logs da Lambda"
 
   policy = file("${path.module}/iam_policy.json")
