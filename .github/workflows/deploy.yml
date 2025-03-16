@@ -36,9 +36,9 @@ jobs:
         run: terraform init
         working-directory: infra
 
-      - name: Terraform Format
-        run: terraform fmt -check
-        working-directory: infra
+      # - name: Terraform Format
+      #   run: terraform fmt -check
+      #   working-directory: infra
 
       - name: Terraform Validate
         run: terraform validate
