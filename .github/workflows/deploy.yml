@@ -36,9 +36,9 @@ jobs:
         run: terraform init
         working-directory: infra
 
-      # - name: Terraform Format
-      #   run: terraform fmt -check
-      #   working-directory: infra
+      - name: Terraform Format
+        run: terraform fmt -check
+        working-directory: infra
 
       - name: Terraform Validate
         run: terraform validate
@@ -51,4 +51,4 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
-        working-directory: terraform
+        working-directory: infra

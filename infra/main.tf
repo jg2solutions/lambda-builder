@@ -6,7 +6,7 @@ resource "aws_lambda_function" "lambda_builder" {
     
 
     function_name       = var.lambda_name
-    role                =  aws_iam_rolew.lambda_role.arn
+    role                =  aws_iam_role.lambda_role.arn
     handler             = var.lambda_handler
     runtime             = var.lambda_runtime
     filename            = var.lambda_filename
