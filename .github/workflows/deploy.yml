@@ -38,15 +38,15 @@ jobs:
 
       - name: Terraform Format
         run: terraform fmt -check
-        working-directory: terraform
+        working-directory: infra
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: terraform
+        working-directory: infra
 
       - name: Terraform Plan
         run: terraform plan
-        working-directory: terraform
+        working-directory: infra
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
