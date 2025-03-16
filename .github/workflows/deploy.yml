@@ -30,11 +30,11 @@ jobs:
         run: |
           cd lambda
           zip -r lambda.zip .
-          mv lambda.zip ./terraform/lambda.zip
+          mv lambda.zip ../infra/lambda.zip
 
       - name: Terraform Init
         run: terraform init
-        working-directory: terraform
+        working-directory: infra
 
       - name: Terraform Format
         run: terraform fmt -check
